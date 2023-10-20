@@ -66,9 +66,18 @@ public class PalindromoAir {
     }
     
     
-    public double income(  double ingresosGeneradosl){
-   
-    return ingresosGeneradosl;
+    public double income(){
+        return income(totalIngresos,0);
+    }
+    private double income(double totalIngresos,int posicion){
+       if(posicion>=ticket.length){
+            return totalIngresos;
+        } 
+       if(ticket[posicion]!=null){
+           totalIngresos+= ticket[posicion].getTotalPagado();
+           return income(totalIngresos,posicion+1);
+        }
+        return income(totalIngresos,posicion+1);
     }
     
     public void reset() {
