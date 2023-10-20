@@ -4,7 +4,7 @@
 
 
 public class MenuPrincipal extends javax.swing.JFrame {
-
+Ticket ticket;
     public MenuPrincipal() {
         initComponents();
           setLocationRelativeTo(null);

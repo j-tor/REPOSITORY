@@ -3,9 +3,24 @@
 public class Factura extends javax.swing.JFrame {
 
    
-    public Factura() {
-       initComponents();
+   Ticket ticket;
+   PalindromoAir palindromo=new PalindromoAir();
+    public Factura(Ticket ticket) {
+        this.ticket=ticket;
+       initComponents(); 
        setLocationRelativeTo(null);
+       lbnombre.setText(ticket.getnombrePasajero());
+       String total=Double.toString(ticket.gettotalpagado());
+       total_pagado.setText(total);
+     
+       
+       if(palindromo.isPalindromo(ticket.getnombrePasajero())==false){
+           descuento.setText("0");
+           
+       }else {
+           descuento.setText("160");
+           JOptionPane.showMessageDialog(null, "Descuento 20% Aplicado");
+       }
     }
 
    
@@ -15,7 +30,7 @@ public class Factura extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbnombre = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         total_pagado = new javax.swing.JLabel();
@@ -36,10 +51,10 @@ public class Factura extends javax.swing.JFrame {
         jLabel3.setText("Nombre del Pasajero: ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("nombre");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 130, 20));
+        lbnombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbnombre.setForeground(new java.awt.Color(255, 255, 255));
+        lbnombre.setText("nombre");
+        getContentPane().add(lbnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 130, 20));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,9 +104,9 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lbnombre;
     private javax.swing.JLabel total_pagado;
     // End of variables declaration//GEN-END:variables
 }

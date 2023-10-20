@@ -12,6 +12,7 @@ public class Ticket {
     }
 
     public String getnombrePasajero() {
+        
         return nombrePasajero;
     }
 

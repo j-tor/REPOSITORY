@@ -53,6 +53,7 @@ public class JavaTicket extends javax.swing.JFrame {
 
     private void nombre_pasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_pasajeroActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_nombre_pasajeroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

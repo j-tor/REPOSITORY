@@ -1,6 +1,5 @@
 
 
-
 import java.awt.TextArea;
 import javax.swing.JOptionPane;
 
@@ -16,7 +15,7 @@ import javax.swing.JOptionPane;
 public class PalindromoAir {
     private Ticket ticket[]=new Ticket[30];
     private double descuento=0.2*800,total=0; 
-    
+   
     
     public int firstAvailable() {
         return firstAvailable(0);
@@ -34,7 +33,7 @@ public class PalindromoAir {
     }
 
     private int searchPassenger(String name, int index) {
-        if (ticket[index].passengerName.equals(name)) {
+        if (ticket[index].getnombrePasajero().equals(name)) {
             return searchPassenger(name, index + 1); 
         }
         return -1;
@@ -42,7 +41,7 @@ public class PalindromoAir {
 
     
     public boolean isPalindromo(String Name){
-      return Palindromo(Name,   0,0);
+      return Palindromo(Name,   0,Name.length()-1);
     }
     private static boolean Palindromo(String palabra,int inicio,int fin){
       if(inicio<fin){
@@ -60,21 +59,21 @@ public class PalindromoAir {
     private void printPassengers(int index) {
         if (index < ticket.length && ticket[index] != null) {
             //outputTextArea.append("Nombre: " + ticket[index].passengerName + ", Precio pagado: $" + ticket[index].price);
-            System.out.println("Nombre: " + ticket[index].passengerName + ", Precio pagado: $" + ticket[index].price);
+            System.out.println("Nombre: " + ticket[index].getnombrePasajero() + ", Precio pagado: $" + ticket[index].gettotalpagado());
             printPassengers(index + 1);
         }
     }
     
     
     public double income(){
-        return income(totalIngresos,0);
+        return income(0,0);
     }
     private double income(double totalIngresos,int posicion){
        if(posicion>=ticket.length){
             return totalIngresos;
         } 
        if(ticket[posicion]!=null){
-           totalIngresos+= ticket[posicion].getTotalPagado();
+           totalIngresos+= ticket[posicion].gettotalpagado();
            return income(totalIngresos,posicion+1);
         }
         return income(totalIngresos,posicion+1);
@@ -111,13 +110,13 @@ public class PalindromoAir {
              return false;   
             ticket[searchPassenger(name)]=null;
             return true;
-    return false;
+    
     }
     
     
      public void dispatch() {
         double totalIncome = income();
-        outputTextArea.append("Ingresos totales: $" + totalIncome);
+       // lista_De_pasajeros.append("Ingresos totales: $" + totalIncome);
         System.out.println("Ingresos totales: $" + totalIncome);
         reset();
     }
@@ -125,16 +124,5 @@ public class PalindromoAir {
   
     
     
-    public static void main(String[] args) {
-        PalindromoAir airline = new PalindromoAir();
-       
-
-        System.out.println("Detalles de pasajeros:");
-        airline.printPassengers();
-
-       
-    }
+  
 }
-   
-    
-
