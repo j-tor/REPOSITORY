@@ -6,7 +6,7 @@ public class Ticket {
 
     public Ticket(String nombrePasajero, double totalpagado) {
         this.nombrePasajero = nombrePasajero;
-        this.totalpagado = totalpagado;
+        this.totalpagado = 800;
     }
 
     public String getnombrePasajero() {
