@@ -72,13 +72,13 @@ public class PalindromoAir {
     }
     
     public void reset() {
-        resetRecursive(0);
+        reset(0);
     }
 
-    private void resetRecursive(int index) {
+    private void reset(int index) {
         if (index < ticket.length) {
             ticket[index] = null;
-            resetRecursive(index + 1);
+            reset(index + 1);
         }
     }
     
@@ -98,13 +98,19 @@ public class PalindromoAir {
     
     
     public boolean cancelTicket(String name){
-    
+            if(searchPassenger(name)==-1)
+             return false;   
+            ticket[searchPassenger(name)]=null;
+            return true;
     return false;
     }
     
     
-    public void dispatch( ){
-    
+     public void dispatch() {
+        double totalIncome = income();
+        outputTextArea.append("Ingresos totales: $" + totalIncome);
+        System.out.println("Ingresos totales: $" + totalIncome);
+        reset();
     }
  
   
