@@ -1,11 +1,26 @@
 
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+
+
 
 
 
 public class ListadePasajeros extends javax.swing.JFrame {
+    private PalindromoAir pala;
+    
     public ListadePasajeros() {
         initComponents();
-          setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
+        PalindromoAir pal = new PalindromoAir();
+        String texto = "Erorr 404"
+                + " list not found";
+        
+        lista_De_pasajeros.setEditable(false);
+        lista_De_pasajeros.setText(texto);
+        //pala.printPassengers();
+     
+          
     }
 
     
@@ -64,4 +79,30 @@ public class ListadePasajeros extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea lista_De_pasajeros;
     // End of variables declaration//GEN-END:variables
+
+
+public void printPassengers() {
+        String textToPrint = lista_De_pasajeros.getText(); // Obtener el texto del TextArea
+
+        PrinterJob printerJob = PrinterJob.getPrinterJob();
+        if (printerJob.printDialog()) {
+            try {
+                printerJob.print();
+            } catch (PrinterException e) {
+                // Manejar la excepción en caso de un error de impresión
+                e.printStackTrace();
+            }
+        }}
+public static void main(String args[]) {
+       
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ListadePasajeros().setVisible(true);
+            }
+        });
+    }
 }
+
+
+ 
+

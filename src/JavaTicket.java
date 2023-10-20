@@ -1,7 +1,8 @@
 
 
 public class JavaTicket extends javax.swing.JFrame {
-
+Ticket ticket;
+PalindromoAir palindromo = new PalindromoAir();
     public JavaTicket() {
         initComponents();
           setLocationRelativeTo(null);
@@ -57,7 +58,9 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_nombre_pasajeroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Factura factura = new Factura();
+       String nombrepasajero=nombre_pasajero.getText();
+       Ticket ticket=new Ticket(nombrepasajero,800);
+        Factura factura = new Factura(ticket);
        factura.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -68,6 +68,11 @@ Ticket ticket;
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Salir ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 320, 100, -1));
 
         pack();
@@ -90,6 +95,11 @@ Ticket ticket;
     cancelar.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_cancelar_ticketActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

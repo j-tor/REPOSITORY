@@ -1,4 +1,7 @@
 
+import javax.swing.JOptionPane;
+
+
 
 public class Factura extends javax.swing.JFrame {
 
